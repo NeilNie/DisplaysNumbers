@@ -1,0 +1,12 @@
+// 
+// Digital Logic Display & Number Lab
+// Part 1
+// Neil Nie
+// (c) Oct 28th, 2018. 
+// 
+
+module seven_segment_display(
+
+	in,
+	out
+)

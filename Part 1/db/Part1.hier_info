@@ -1,0 +1,28 @@
+|Part1
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+SW[3] => SW[3].IN1
+HEX0[0] <= seven_segment_display:comb_3.port1
+HEX0[1] <= seven_segment_display:comb_3.port1
+HEX0[2] <= seven_segment_display:comb_3.port1
+HEX0[3] <= seven_segment_display:comb_3.port1
+HEX0[4] <= seven_segment_display:comb_3.port1
+HEX0[5] <= seven_segment_display:comb_3.port1
+HEX0[6] <= seven_segment_display:comb_3.port1
+
+
+|Part1|seven_segment_display:comb_3
+in[0] => ~NO_FANOUT~
+in[1] => ~NO_FANOUT~
+in[2] => ~NO_FANOUT~
+in[3] => ~NO_FANOUT~
+out[0] <= <GND>
+out[1] <= <GND>
+out[2] <= <GND>
+out[3] <= <GND>
+out[4] <= <GND>
+out[5] <= <GND>
+out[6] <= <GND>
+
+
