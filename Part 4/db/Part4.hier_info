@@ -1,0 +1,265 @@
+|Part4
+SW[0] => x[0].IN1
+SW[1] => x[1].IN1
+SW[2] => x[2].IN1
+SW[3] => x[3].IN1
+SW[4] => y[4].IN1
+SW[5] => y[5].IN1
+SW[6] => y[6].IN1
+SW[7] => y[7].IN1
+HEX0[0] <= display_unit:comb_12.port1
+HEX0[1] <= display_unit:comb_12.port1
+HEX0[2] <= display_unit:comb_12.port1
+HEX0[3] <= display_unit:comb_12.port1
+HEX0[4] <= display_unit:comb_12.port1
+HEX0[5] <= display_unit:comb_12.port1
+HEX0[6] <= display_unit:comb_12.port1
+HEX1[0] <= display_unit:comb_12.port2
+HEX1[1] <= display_unit:comb_12.port2
+HEX1[2] <= display_unit:comb_12.port2
+HEX1[3] <= display_unit:comb_12.port2
+HEX1[4] <= display_unit:comb_12.port2
+HEX1[5] <= display_unit:comb_12.port2
+HEX1[6] <= display_unit:comb_12.port2
+
+
+|Part4|four_bit_adder:comb_11
+x[0] => x[0].IN1
+x[1] => x[1].IN1
+x[2] => x[2].IN1
+x[3] => x[3].IN1
+y[0] => y[0].IN1
+y[1] => y[1].IN1
+y[2] => y[2].IN1
+y[3] => y[3].IN1
+out[0] <= full_adder:comb_3.port2
+out[1] <= full_adder:comb_4.port2
+out[2] <= full_adder:comb_5.port2
+out[3] <= full_adder:comb_6.port2
+carry <= full_adder:comb_6.port4
+
+
+|Part4|four_bit_adder:comb_11|full_adder:comb_3
+a => cout.IN0
+a => cout.IN0
+a => out.IN0
+a => out.IN0
+a => out.IN0
+a => out.IN0
+a => cout.IN0
+b => cout.IN1
+b => cout.IN1
+b => out.IN1
+b => out.IN1
+b => out.IN1
+b => out.IN1
+b => cout.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+cin => cout.IN1
+cin => out.IN1
+cin => out.IN1
+cin => out.IN1
+cin => out.IN1
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|four_bit_adder:comb_11|full_adder:comb_4
+a => cout.IN0
+a => cout.IN0
+a => out.IN0
+a => out.IN0
+a => out.IN0
+a => out.IN0
+a => cout.IN0
+b => cout.IN1
+b => cout.IN1
+b => out.IN1
+b => out.IN1
+b => out.IN1
+b => out.IN1
+b => cout.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+cin => cout.IN1
+cin => out.IN1
+cin => out.IN1
+cin => out.IN1
+cin => out.IN1
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|four_bit_adder:comb_11|full_adder:comb_5
+a => cout.IN0
+a => cout.IN0
+a => out.IN0
+a => out.IN0
+a => out.IN0
+a => out.IN0
+a => cout.IN0
+b => cout.IN1
+b => cout.IN1
+b => out.IN1
+b => out.IN1
+b => out.IN1
+b => out.IN1
+b => cout.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+cin => cout.IN1
+cin => out.IN1
+cin => out.IN1
+cin => out.IN1
+cin => out.IN1
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|four_bit_adder:comb_11|full_adder:comb_6
+a => cout.IN0
+a => cout.IN0
+a => out.IN0
+a => out.IN0
+a => out.IN0
+a => out.IN0
+a => cout.IN0
+b => cout.IN1
+b => cout.IN1
+b => out.IN1
+b => out.IN1
+b => out.IN1
+b => out.IN1
+b => cout.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+cin => cout.IN1
+cin => out.IN1
+cin => out.IN1
+cin => out.IN1
+cin => out.IN1
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|display_unit:comb_12
+in[0] => in[0].IN3
+in[1] => in[1].IN3
+in[2] => in[2].IN3
+in[3] => in[3].IN3
+hex0[0] <= full_display:comb_6.port1
+hex0[1] <= full_display:comb_6.port1
+hex0[2] <= full_display:comb_6.port1
+hex0[3] <= full_display:comb_6.port1
+hex0[4] <= full_display:comb_6.port1
+hex0[5] <= full_display:comb_6.port1
+hex0[6] <= full_display:comb_6.port1
+hex1[0] <= half_display:comb_7.port1
+hex1[1] <= half_display:comb_7.port1
+hex1[2] <= half_display:comb_7.port1
+hex1[3] <= half_display:comb_7.port1
+hex1[4] <= half_display:comb_7.port1
+hex1[5] <= half_display:comb_7.port1
+hex1[6] <= half_display:comb_7.port1
+
+
+|Part4|display_unit:comb_12|comparator:comb_3
+in[0] => ~NO_FANOUT~
+in[1] => out.IN0
+in[2] => out.IN1
+in[3] => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|display_unit:comb_12|converter:comb_4
+in[0] => out.IN0
+in[1] => out.IN1
+in[1] => out.IN1
+in[2] => out.IN0
+in[3] => out.IN1
+in[3] => out.IN1
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= <GND>
+
+
+|Part4|display_unit:comb_12|two_one_four_bit_mux:comb_5
+a[0] => out.IN0
+a[1] => out.IN0
+a[2] => out.IN0
+a[3] => out.IN0
+b[0] => out.IN0
+b[1] => out.IN0
+b[2] => out.IN0
+b[3] => out.IN0
+sel => out.IN1
+sel => out.IN1
+sel => out.IN1
+sel => out.IN1
+sel => out.IN1
+sel => out.IN1
+sel => out.IN1
+sel => out.IN1
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|display_unit:comb_12|full_display:comb_6
+in[0] => out.IN1
+in[0] => out.IN1
+in[0] => out.IN1
+in[0] => out.IN0
+in[0] => out.IN1
+in[0] => out.IN1
+in[0] => out.IN1
+in[0] => out.IN1
+in[0] => out.IN1
+in[0] => out.IN1
+in[0] => out.IN1
+in[0] => out.IN1
+in[0] => out.IN1
+in[0] => out.IN1
+in[0] => out.IN1
+in[0] => out.IN1
+in[1] => out.IN1
+in[1] => out.IN0
+in[1] => out.IN1
+in[1] => out.IN0
+in[1] => out.IN1
+in[1] => out.IN1
+in[1] => out.IN0
+in[1] => out.IN1
+in[1] => out.IN1
+in[1] => out.IN1
+in[1] => out.IN0
+in[1] => out.IN0
+in[2] => out.IN0
+in[2] => out.IN0
+in[2] => out.IN1
+in[2] => out.IN1
+in[2] => out.IN0
+in[2] => out.IN1
+in[2] => out.IN0
+in[3] => out.IN1
+in[3] => out.IN1
+in[3] => out.IN1
+in[3] => out.IN1
+in[3] => out.IN1
+in[3] => out.IN1
+in[3] => out.IN1
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|display_unit:comb_12|half_display:comb_7
+in => out[1].DATAIN
+out[0] <= <VCC>
+out[1] <= in.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= <VCC>
+out[3] <= <VCC>
+out[4] <= <GND>
+out[5] <= <GND>
+out[6] <= <GND>
+
+

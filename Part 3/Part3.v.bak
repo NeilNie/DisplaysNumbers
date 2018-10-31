@@ -1,0 +1,14 @@
+//
+// Digital Logic Lab Part 3
+// Ripple Carry Adder
+// (c) Neil Nie
+// Oct 31st, 2018
+// 
+
+module full_adder(
+
+	in,
+	out,
+	cin,
+	cout
+);
