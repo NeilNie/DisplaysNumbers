@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Part1
-Sun Oct 28 17:36:51 2018
+Mon Oct 29 07:04:06 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -41,13 +41,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Oct 28 17:36:51 2018       ;
+; Analysis & Synthesis Status        ; Successful - Mon Oct 29 07:04:06 2018       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Part1                                       ;
 ; Top-level Entity Name              ; Part1                                       ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
+; Total logic elements               ; 7                                           ;
+;     Total combinational functions  ; 7                                           ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 11                                          ;
@@ -153,44 +153,46 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------+-------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-;                                             ;       ;
-; Total combinational functions               ; 0     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 11    ;
-;                                             ;       ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-;                                             ;       ;
-; Maximum fan-out node                        ; SW[0] ;
-; Maximum fan-out                             ; 1     ;
-; Total fan-out                               ; 11    ;
-; Average fan-out                             ; 0.50  ;
-+---------------------------------------------+-------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 7           ;
+;                                             ;             ;
+; Total combinational functions               ; 7           ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 7           ;
+;     -- 3 input functions                    ; 0           ;
+;     -- <=2 input functions                  ; 0           ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 7           ;
+;     -- arithmetic mode                      ; 0           ;
+;                                             ;             ;
+; Total registers                             ; 0           ;
+;     -- Dedicated logic registers            ; 0           ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 11          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; SW[0]~input ;
+; Maximum fan-out                             ; 7           ;
+; Total fan-out                               ; 46          ;
+; Average fan-out                             ; 1.59        ;
++---------------------------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |Part1                     ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 11   ; 0            ; |Part1              ; Part1       ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                       ;
++-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+-----------------------+--------------+
+; Compilation Hierarchy Node        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Entity Name           ; Library Name ;
++-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+-----------------------+--------------+
+; |Part1                            ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 11   ; 0            ; |Part1                              ; Part1                 ; work         ;
+;    |seven_segment_display:comb_3| ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part1|seven_segment_display:comb_3 ; seven_segment_display ; work         ;
++-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+-----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -215,12 +217,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 11                          ;
-; cycloneiii_lcell_comb ; 1                           ;
-;     normal            ; 1                           ;
-;         0 data inputs ; 1                           ;
+; cycloneiii_lcell_comb ; 8                           ;
+;     normal            ; 8                           ;
+;         1 data inputs ; 1                           ;
+;         4 data inputs ; 7                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.50                        ;
 +-----------------------+-----------------------------+
 
 
@@ -239,7 +242,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Oct 28 17:36:02 2018
+    Info: Processing started: Mon Oct 29 07:03:37 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Part1 -c Part1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20029): Only one processor detected - disabling parallel compilation
@@ -250,30 +253,17 @@ Info (12021): Found 2 design units, including 2 entities, in source file part1.v
 Critical Warning (10846): Verilog HDL Instantiation warning at Part1.v(40): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 1/Part1.v Line: 40
 Info (12127): Elaborating entity "Part1" for the top level hierarchy
 Info (12128): Elaborating entity "seven_segment_display" for hierarchy "seven_segment_display:comb_3" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 1/Part1.v Line: 40
-Warning (10034): Output port "out" at Part1.v(15) has no driver File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 1/Part1.v Line: 15
-Warning (12158): Entity "seven_segment_display" contains only dangling pins File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 1/Part1.v Line: 40
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 1/Part1.v Line: 36
-    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 1/Part1.v Line: 36
-    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 1/Part1.v Line: 36
-    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 1/Part1.v Line: 36
-    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 1/Part1.v Line: 36
-    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 1/Part1.v Line: 36
-    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 1/Part1.v Line: 36
+Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 1/Part1.v Line: 35
-    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 1/Part1.v Line: 35
-    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 1/Part1.v Line: 35
-    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 1/Part1.v Line: 35
-Info (21057): Implemented 11 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 18 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 7 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
-    Info: Peak virtual memory: 4752 megabytes
-    Info: Processing ended: Sun Oct 28 17:36:51 2018
-    Info: Elapsed time: 00:00:49
-    Info: Total CPU time (on all processors): 00:00:30
+    Info (21061): Implemented 7 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4749 megabytes
+    Info: Processing ended: Mon Oct 29 07:04:06 2018
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:27
 
 

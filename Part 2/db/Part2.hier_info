@@ -1,0 +1,59 @@
+|Part2
+SW[0] => SW[0].IN3
+SW[1] => SW[1].IN3
+SW[2] => SW[2].IN3
+SW[3] => SW[3].IN3
+HEX0[0] <= <GND>
+HEX0[1] <= <GND>
+HEX0[2] <= <GND>
+HEX0[3] <= <GND>
+HEX0[4] <= <GND>
+HEX0[5] <= <GND>
+HEX0[6] <= <GND>
+HEX1[0] <= <GND>
+HEX1[1] <= <GND>
+HEX1[2] <= <GND>
+HEX1[3] <= <GND>
+HEX1[4] <= <GND>
+HEX1[5] <= <GND>
+HEX1[6] <= <GND>
+
+
+|Part2|comparator:comb_3
+in[0] => ~NO_FANOUT~
+in[1] => out.IN0
+in[2] => out.IN1
+in[3] => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part2|converter:comb_4
+in[0] => out.IN0
+in[1] => out.IN1
+in[1] => out.IN1
+in[2] => out.IN0
+in[3] => out.IN1
+in[3] => out.IN1
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= <GND>
+
+
+|Part2|two_one_four_bit_mux:comb_5
+a[0] => out.IN0
+a[1] => out[1].DATAIN
+a[2] => out[2].DATAIN
+a[3] => out[3].DATAIN
+b[0] => out.IN0
+b[1] => ~NO_FANOUT~
+b[2] => ~NO_FANOUT~
+b[3] => ~NO_FANOUT~
+sel => out.IN1
+sel => out.IN1
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= a[1].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= a[2].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= a[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
