@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Part2
-Wed Oct 31 04:42:04 2018
+Thu Nov 01 20:53:01 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -41,13 +41,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Oct 31 04:42:04 2018       ;
+; Analysis & Synthesis Status        ; Successful - Thu Nov 01 20:53:01 2018       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Part2                                       ;
 ; Top-level Entity Name              ; Part2                                       ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 8                                           ;
-;     Total combinational functions  ; 8                                           ;
+; Total logic elements               ; 7                                           ;
+;     Total combinational functions  ; 7                                           ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 18                                          ;
@@ -158,16 +158,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 8           ;
+; Estimated Total logic elements              ; 7           ;
 ;                                             ;             ;
-; Total combinational functions               ; 8           ;
+; Total combinational functions               ; 7           ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 7           ;
+;     -- 4 input functions                    ; 6           ;
 ;     -- 3 input functions                    ; 1           ;
 ;     -- <=2 input functions                  ; 0           ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 8           ;
+;     -- normal mode                          ; 7           ;
 ;     -- arithmetic mode                      ; 0           ;
 ;                                             ;             ;
 ; Total registers                             ; 0           ;
@@ -178,10 +178,10 @@ refer to the applicable agreement for further details.
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
-; Maximum fan-out node                        ; SW[3]~input ;
-; Maximum fan-out                             ; 8           ;
-; Total fan-out                               ; 58          ;
-; Average fan-out                             ; 1.32        ;
+; Maximum fan-out node                        ; SW[1]~input ;
+; Maximum fan-out                             ; 7           ;
+; Total fan-out                               ; 53          ;
+; Average fan-out                             ; 1.23        ;
 +---------------------------------------------+-------------+
 
 
@@ -190,9 +190,9 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Entity Name  ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+--------------+
-; |Part2                     ; 8 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |Part2                     ; Part2        ; work         ;
+; |Part2                     ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |Part2                     ; Part2        ; work         ;
 ;    |comparator:comb_3|     ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part2|comparator:comb_3   ; comparator   ; work         ;
-;    |full_display:comb_6|   ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part2|full_display:comb_6 ; full_display ; work         ;
+;    |full_display:comb_6|   ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part2|full_display:comb_6 ; full_display ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -220,13 +220,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; boundary_port         ; 18                          ;
 ; cycloneiii_lcell_comb ; 11                          ;
 ;     normal            ; 11                          ;
-;         0 data inputs ; 1                           ;
+;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 2                           ;
 ;         3 data inputs ; 1                           ;
-;         4 data inputs ; 7                           ;
+;         4 data inputs ; 6                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.47                        ;
+; Average LUT depth     ; 1.40                        ;
 +-----------------------+-----------------------------+
 
 
@@ -235,7 +235,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -245,45 +245,46 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Oct 31 04:40:52 2018
+    Info: Processing started: Thu Nov 01 20:52:30 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Part2 -c Part2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20029): Only one processor detected - disabling parallel compilation
 Info (12021): Found 6 design units, including 6 entities, in source file part2.v
     Info (12023): Found entity 1: half_display File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 10
     Info (12023): Found entity 2: full_display File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 32
-    Info (12023): Found entity 3: two_one_four_bit_mux File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 51
-    Info (12023): Found entity 4: comparator File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 71
-    Info (12023): Found entity 5: converter File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 88
-    Info (12023): Found entity 6: Part2 File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 104
-Critical Warning (10846): Verilog HDL Instantiation warning at Part2.v(121): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 121
-Critical Warning (10846): Verilog HDL Instantiation warning at Part2.v(122): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 122
-Critical Warning (10846): Verilog HDL Instantiation warning at Part2.v(124): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 124
+    Info (12023): Found entity 3: two_one_four_bit_mux File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 52
+    Info (12023): Found entity 4: comparator File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 75
+    Info (12023): Found entity 5: converter File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 92
+    Info (12023): Found entity 6: Part2 File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 108
 Critical Warning (10846): Verilog HDL Instantiation warning at Part2.v(125): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 125
 Critical Warning (10846): Verilog HDL Instantiation warning at Part2.v(126): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 126
+Critical Warning (10846): Verilog HDL Instantiation warning at Part2.v(128): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 128
+Critical Warning (10846): Verilog HDL Instantiation warning at Part2.v(129): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 129
+Critical Warning (10846): Verilog HDL Instantiation warning at Part2.v(130): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 130
 Info (12127): Elaborating entity "Part2" for the top level hierarchy
-Info (12128): Elaborating entity "comparator" for hierarchy "comparator:comb_3" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 121
-Info (12128): Elaborating entity "converter" for hierarchy "converter:comb_4" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 122
-Info (12128): Elaborating entity "two_one_four_bit_mux" for hierarchy "two_one_four_bit_mux:comb_5" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 124
-Info (12128): Elaborating entity "full_display" for hierarchy "full_display:comb_6" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 125
-Info (12128): Elaborating entity "half_display" for hierarchy "half_display:comb_7" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 126
+Info (12128): Elaborating entity "comparator" for hierarchy "comparator:comb_3" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 125
+Info (12128): Elaborating entity "converter" for hierarchy "converter:comb_4" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 126
+Info (12128): Elaborating entity "two_one_four_bit_mux" for hierarchy "two_one_four_bit_mux:comb_5" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 128
+Info (12128): Elaborating entity "full_display" for hierarchy "full_display:comb_6" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 129
+Info (12128): Elaborating entity "half_display" for hierarchy "half_display:comb_7" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 130
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 113
-    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 113
-    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 113
-    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 113
-    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 113
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 116
+    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 117
+    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 117
+    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 117
+    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 117
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 2/Part2.v Line: 117
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 26 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 25 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 14 output pins
-    Info (21061): Implemented 8 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 4767 megabytes
-    Info: Processing ended: Wed Oct 31 04:42:04 2018
-    Info: Elapsed time: 00:01:12
-    Info: Total CPU time (on all processors): 00:00:44
+    Info (21061): Implemented 7 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 4753 megabytes
+    Info: Processing ended: Thu Nov 01 20:53:01 2018
+    Info: Elapsed time: 00:00:31
+    Info: Total CPU time (on all processors): 00:00:27
 
 
