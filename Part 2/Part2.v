@@ -29,18 +29,18 @@ endmodule
 
 // full seven segment display module.
 
-module full_display(
+module seven_segment_display(
 
 	in,			// accepts a four bit input
 	out			// returns a six bit output
 );
 
 input [3:0] in; 	// A B C D
-output [6:0] out; // G F E D C B A
+output [6:0] out; // F E D C B A
 
 assign out[6] = (~in[3] & ~in[2] & ~in[1]) + (~in[3] & in[2] & in[1] & in[0]); 
 assign out[5] = (in[3] & in[2] & ~in[1]) + (~in[3] & in[1] & in[0]) + (~in[3] & ~in[2] & in[0]) + (~in[3] & ~in[2] & in[1]); 
-assign out[4] = (in[3] & in[2] & in[1]) + (~in[3] & ~in[2] & ~in[1] & ~in[0]) + (in[3] & in[2] & ~in[0]);
+assign out[4] = (~in[1] & in[2]) | (in[0]);
 assign out[3] = (in[2] & in[1] & in[0]) + (~in[3] & in[2] & ~in[1] & ~in[0]) + (in[3] & ~in[2] & in[1] & ~in[0]) + (~in[2] & ~in[1] & in[0]);
 assign out[2] = (in[3] & in[2] & ~in[0]) + (~in[3] & ~in[2] & in[1] & ~in[0]) + (in[3] & in[2] & in[1]);
 assign out[1] = (in[2] & in[1] & ~in[0]) + (in[3] & in[1] & in[0]) + (~in[3] & in[2] & ~in[1] & in[0]) + (in[3] & in[2] & ~in[0]);
@@ -125,7 +125,7 @@ comparator(SW, compare_out);
 converter(SW, convert_out);
 
 two_one_four_bit_mux(SW, convert_out, compare_out, mux_out);
-full_display(mux_out, display0);
+seven_segment_display(mux_out, display0);
 half_display(compare_out, display1);
 
 assign HEX2 = display0;
