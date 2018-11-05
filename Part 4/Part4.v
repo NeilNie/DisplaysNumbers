@@ -35,7 +35,7 @@ module four_bit_adder(
 
 input [3:0] x;
 input [3:0] y;
-output [3:0] out;
+output [4:0] out;
 output carry;
 
 wire [3:0] cout;
@@ -44,8 +44,7 @@ full_adder(x[0], y[0], out[0], 0, cout[0]);
 full_adder(x[1], y[1], out[1], cout[0], cout[1]);
 full_adder(x[2], y[2], out[2], cout[1], cout[2]);
 full_adder(x[3], y[3], out[3], cout[2], cout[3]);
-
-assign carry = cout[3];
+out[4] = cout[3];
 
 endmodule
 
@@ -116,10 +115,10 @@ module comparator(
 
 );
 
-input [3:0] in;
+input [4:0] in;
 output out;
 
-assign out = in[3] & (in[2] | in[1]);
+assign out = in[4] | in[3] & (in[2] | in[1]);
 
 endmodule
 
@@ -135,10 +134,10 @@ module converter(
 input [3:0] in;
 output [3:0] out;
 
-assign out[3] = 0;
-assign out[2] = in[3] & in[2] & in[1];
-assign out[1] = in[3] & in[2] & ~in[1];
-assign out[0] = in[3] & in[0];
+assign out[3] = ~in[2] & ~in[1];
+assign out[2] = in[1] & ~in[0];
+assign out[1] = (in[3] & in[2] & ~in[1]) | (~in[3] & in[2] & in[1]);
+assign out[0] = (in[3] & in[0]) | (in[2] & in[1] & in[0]);
 
 endmodule
 
@@ -161,7 +160,7 @@ module display_unit(
 	hex1
 );
 
-input  [3:0] in;
+input  [4:0] in;
 output [6:0] hex0;
 output [6:0] hex1;
 
@@ -171,9 +170,9 @@ wire [3:0]  convert_out;
 wire [3:0]  mux_out;
 
 comparator(in, compare_out);
-converter(in, convert_out);
+converter(in[3:0], convert_out); // you only need the last four bits of the input
 
-two_one_four_bit_mux(in, convert_out, compare_out, mux_out);
+two_one_four_bit_mux(in[3:0], convert_out, compare_out, mux_out);
 full_display(mux_out, hex0);
 half_display(compare_out, hex1);
 
@@ -195,15 +194,15 @@ output [6:0] HEX1;
 // assign x & y
 wire [3:0] x;
 wire [7:4] y;
-wire [3:0] sum;
+wire [4:0] sum;
 wire [6:0] display0;
 wire [6:0] display1;
-wire 		  cout;
 
 assign x = SW[3:0];
 assign y = SW[7:4];
 
-four_bit_adder(x, y, sum, cout);
+four_bit_adder(x, y, sum);
+
 display_unit(sum, display0, display1);
 
 assign HEX0 = display0;

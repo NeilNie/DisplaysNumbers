@@ -8,20 +8,20 @@ SW[5] => Add0.IN7
 SW[6] => Add0.IN6
 SW[7] => Add0.IN5
 SW[8] => Add1.IN8
-HEX0[0] <= full_display:comb_24.port1
-HEX0[1] <= full_display:comb_24.port1
-HEX0[2] <= full_display:comb_24.port1
-HEX0[3] <= full_display:comb_24.port1
-HEX0[4] <= full_display:comb_24.port1
-HEX0[5] <= full_display:comb_24.port1
-HEX0[6] <= full_display:comb_24.port1
-HEX1[0] <= half_display:comb_25.port1
-HEX1[1] <= half_display:comb_25.port1
-HEX1[2] <= half_display:comb_25.port1
-HEX1[3] <= half_display:comb_25.port1
-HEX1[4] <= half_display:comb_25.port1
-HEX1[5] <= half_display:comb_25.port1
-HEX1[6] <= half_display:comb_25.port1
+HEX0[0] << full_display:comb_24.port1
+HEX0[1] << full_display:comb_24.port1
+HEX0[2] << full_display:comb_24.port1
+HEX0[3] << full_display:comb_24.port1
+HEX0[4] << full_display:comb_24.port1
+HEX0[5] << full_display:comb_24.port1
+HEX0[6] << full_display:comb_24.port1
+HEX1[0] << half_display:comb_25.port1
+HEX1[1] << half_display:comb_25.port1
+HEX1[2] << half_display:comb_25.port1
+HEX1[3] << half_display:comb_25.port1
+HEX1[4] << half_display:comb_25.port1
+HEX1[5] << half_display:comb_25.port1
+HEX1[6] << half_display:comb_25.port1
 
 
 |Part5|full_display:comb_24
