@@ -36,15 +36,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[4]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[0]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[2]",
+					"name" : "HEX1[2]",
 					"strict" : false
 				},
 				{
@@ -52,11 +44,23 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[1]",
+					"name" : "SW[2]",
 					"strict" : false
 				},
 				{
 					"name" : "SW[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[0]",
 					"strict" : false
 				},
 				{

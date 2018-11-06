@@ -74,7 +74,7 @@ reg [3:0] z;
 reg [3:0] s0;
 reg c_1;
 
-always @(A or B or c_0) begin 
+always @ (A or B or c_0) begin 
 	sum = A + B + c_0;
 end
 

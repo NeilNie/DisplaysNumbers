@@ -36,7 +36,8 @@ out[0] <= full_adder:comb_3.port2
 out[1] <= full_adder:comb_4.port2
 out[2] <= full_adder:comb_5.port2
 out[3] <= full_adder:comb_6.port2
-carry <= full_adder:comb_6.port4
+out[4] <= full_adder:comb_6.port4
+carry <= <GND>
 
 
 |Part4|four_bit_adder:comb_11|full_adder:comb_3
@@ -140,6 +141,7 @@ in[0] => in[0].IN3
 in[1] => in[1].IN3
 in[2] => in[2].IN3
 in[3] => in[3].IN3
+in[4] => in[4].IN1
 hex0[0] <= full_display:comb_6.port1
 hex0[1] <= full_display:comb_6.port1
 hex0[2] <= full_display:comb_6.port1
@@ -161,20 +163,33 @@ in[0] => ~NO_FANOUT~
 in[1] => out.IN0
 in[2] => out.IN1
 in[3] => out.IN1
+in[4] => out.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Part4|display_unit:comb_12|converter:comb_4
 in[0] => out.IN0
+in[0] => out.IN1
+in[0] => out.IN1
+in[1] => out.IN0
 in[1] => out.IN1
 in[1] => out.IN1
+in[1] => out.IN1
+in[1] => out.IN1
+in[2] => out.IN1
 in[2] => out.IN0
+in[2] => out.IN0
+in[2] => out.IN0
+in[2] => out.IN0
+in[3] => out.IN1
+in[3] => out.IN1
+in[3] => out.IN1
 in[3] => out.IN1
 in[3] => out.IN1
 out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
 out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
 out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= <GND>
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Part4|display_unit:comb_12|two_one_four_bit_mux:comb_5
@@ -204,7 +219,7 @@ out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
 in[0] => out.IN1
 in[0] => out.IN1
 in[0] => out.IN1
-in[0] => out.IN0
+in[0] => out.IN1
 in[0] => out.IN1
 in[0] => out.IN1
 in[0] => out.IN1
@@ -226,40 +241,40 @@ in[1] => out.IN1
 in[1] => out.IN0
 in[1] => out.IN1
 in[1] => out.IN1
-in[1] => out.IN1
 in[1] => out.IN0
+in[1] => out.IN1
 in[1] => out.IN0
 in[2] => out.IN0
 in[2] => out.IN0
 in[2] => out.IN1
 in[2] => out.IN1
 in[2] => out.IN0
-in[2] => out.IN1
 in[2] => out.IN0
+in[2] => out.IN1
 in[3] => out.IN1
 in[3] => out.IN1
 in[3] => out.IN1
 in[3] => out.IN1
 in[3] => out.IN1
 in[3] => out.IN1
-in[3] => out.IN1
-out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[0] <= Add14.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= Add11.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= Add8.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= Add6.DB_MAX_OUTPUT_PORT_TYPE
 out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= Add3.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Part4|display_unit:comb_12|half_display:comb_7
+in => out[2].DATAIN
 in => out[1].DATAIN
 out[0] <= <VCC>
 out[1] <= in.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= <VCC>
+out[2] <= in.DB_MAX_OUTPUT_PORT_TYPE
 out[3] <= <VCC>
-out[4] <= <GND>
-out[5] <= <GND>
-out[6] <= <GND>
+out[4] <= <VCC>
+out[5] <= <VCC>
+out[6] <= <VCC>
 
 

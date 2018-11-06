@@ -44,12 +44,11 @@ full_adder(x[0], y[0], out[0], 0, cout[0]);
 full_adder(x[1], y[1], out[1], cout[0], cout[1]);
 full_adder(x[2], y[2], out[2], cout[1], cout[2]);
 full_adder(x[3], y[3], out[3], cout[2], cout[3]);
-out[4] = cout[3];
+assign out[4] = cout[3];
 
 endmodule
 
 
-// this only displays nothing or 1. 
 module half_display(
 
 	in,			// accepts a four bit input
@@ -59,8 +58,13 @@ module half_display(
 input in; 			// A
 output [6:0] out; // D C B A G 
 
-assign out[6:3] = 1;
-assign out[2:1] = ~in;
+
+assign out[6] = 1;
+assign out[5] = 1; 
+assign out[4] = 1;
+assign out[3] = 1;
+assign out[2] = ~in;
+assign out[1] = ~in;
 assign out[0] = 1;
 
 endmodule
@@ -134,9 +138,9 @@ module converter(
 input [3:0] in;
 output [3:0] out;
 
-assign out[3] = ~in[2] & ~in[1];
-assign out[2] = in[1] & ~in[0];
-assign out[1] = (in[3] & in[2] & ~in[1]) | (~in[3] & in[2] & in[1]);
+assign out[3] = (in[3] & ~in[2] & ~in[1]);
+assign out[2] = (in[2] & in[1]) | (~in[3] & ~in[2] & ~in[1] & ~in[0]);
+assign out[1] = (in[3] & in[2] & ~in[1]) | (~in[3] & in[2] & in[1]) | (~in[3] & ~in[2] & ~in[1] & ~in[0]);
 assign out[0] = (in[3] & in[0]) | (in[2] & in[1] & in[0]);
 
 endmodule
