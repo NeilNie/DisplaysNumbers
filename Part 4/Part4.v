@@ -48,6 +48,7 @@ assign out[4] = cout[3];
 
 endmodule
 
+// this display only shows one or nothing
 
 module half_display(
 
@@ -69,7 +70,7 @@ assign out[0] = 1;
 
 endmodule
 
-// full seven segment display module.
+// a full full seven segment display module.
 
 module full_display(
 	in,			// accepts a four bit input
@@ -89,13 +90,7 @@ assign out[0] = (in[2] & ~in[1] & ~in[0]) + (in[3] & in[2] & ~in[1]) + (~in[3] &
 
 endmodule
 
-module two_one_four_bit_mux(
-
-	a,
-	b,
-	sel,
-	out
-);
+module two_one_four_bit_mux(a, b, sel, out);
 
 input [3:0] a;
 input [3:0] b;
@@ -151,8 +146,8 @@ endmodule
 /* Parameters
 
 	in: four bit binary input
-	hex0: display in if in < 9
-			display 10 - in if in > 9
+	hex0: display 'in' if in < 9
+			display 10 - 'in' if in > 9
 	hex1: display nothing when in < 9
 			display 1 when in > 9
 
