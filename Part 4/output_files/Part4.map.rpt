@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Part4
-Mon Nov 05 19:14:03 2018
+Sat Nov 17 16:10:54 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -9,15 +9,16 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   1. Legal Notice
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
-  4. Analysis & Synthesis Source Files Read
-  5. Analysis & Synthesis Resource Usage Summary
-  6. Analysis & Synthesis Resource Utilization by Entity
-  7. General Register Statistics
-  8. Port Connectivity Checks: "four_bit_adder:comb_11|full_adder:comb_3"
-  9. Port Connectivity Checks: "four_bit_adder:comb_11"
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Port Connectivity Checks: "four_bit_adder:comb_11|full_adder:comb_3"
+ 10. Port Connectivity Checks: "four_bit_adder:comb_11"
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +44,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Nov 05 19:14:03 2018       ;
+; Analysis & Synthesis Status        ; Successful - Sat Nov 17 16:10:54 2018       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Part4                                       ;
 ; Top-level Entity Name              ; Part4                                       ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 20                                          ;
-;     Total combinational functions  ; 20                                          ;
+; Total logic elements               ; 25                                          ;
+;     Total combinational functions  ; 25                                          ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 22                                          ;
+; Total pins                         ; 33                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -146,13 +147,29 @@ refer to the applicable agreement for further details.
 +------------------------------------------------------------------+--------------------+--------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                              ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                ; Library ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------+---------+
-; Part4.v                          ; yes             ; User Verilog HDL File  ; C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v ;         ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------+---------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                   ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------+---------+
+; Part4.v                          ; yes             ; User Verilog HDL File  ; C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------------------------------------------+
@@ -160,45 +177,46 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+------------------------------------------------+
 ; Resource                                    ; Usage                                          ;
 +---------------------------------------------+------------------------------------------------+
-; Estimated Total logic elements              ; 20                                             ;
+; Estimated Total logic elements              ; 25                                             ;
 ;                                             ;                                                ;
-; Total combinational functions               ; 20                                             ;
+; Total combinational functions               ; 25                                             ;
 ; Logic element usage by number of LUT inputs ;                                                ;
-;     -- 4 input functions                    ; 14                                             ;
-;     -- 3 input functions                    ; 4                                              ;
+;     -- 4 input functions                    ; 12                                             ;
+;     -- 3 input functions                    ; 11                                             ;
 ;     -- <=2 input functions                  ; 2                                              ;
 ;                                             ;                                                ;
 ; Logic elements by mode                      ;                                                ;
-;     -- normal mode                          ; 16                                             ;
+;     -- normal mode                          ; 21                                             ;
 ;     -- arithmetic mode                      ; 4                                              ;
 ;                                             ;                                                ;
 ; Total registers                             ; 0                                              ;
 ;     -- Dedicated logic registers            ; 0                                              ;
 ;     -- I/O registers                        ; 0                                              ;
 ;                                             ;                                                ;
-; I/O pins                                    ; 22                                             ;
+; I/O pins                                    ; 33                                             ;
 ;                                             ;                                                ;
 ; Embedded Multiplier 9-bit elements          ; 0                                              ;
 ;                                             ;                                                ;
-; Maximum fan-out node                        ; four_bit_adder:comb_11|full_adder:comb_4|out~2 ;
-; Maximum fan-out                             ; 14                                             ;
-; Total fan-out                               ; 101                                            ;
-; Average fan-out                             ; 1.58                                           ;
+; Maximum fan-out node                        ; four_bit_adder:comb_11|full_adder:comb_4|out~4 ;
+; Maximum fan-out                             ; 15                                             ;
+; Total fan-out                               ; 129                                            ;
+; Average fan-out                             ; 1.42                                           ;
 +---------------------------------------------+------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                      ;
-+-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+----------------+--------------+
-; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                             ; Entity Name    ; Library Name ;
-+-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+----------------+--------------+
-; |Part4                      ; 20 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 22   ; 0            ; |Part4                                          ; Part4          ; work         ;
-;    |display_unit:comb_12|   ; 15 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part4|display_unit:comb_12                     ; display_unit   ; work         ;
-;       |comparator:comb_3|   ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part4|display_unit:comb_12|comparator:comb_3   ; comparator     ; work         ;
-;       |full_display:comb_6| ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part4|display_unit:comb_12|full_display:comb_6 ; full_display   ; work         ;
-;    |four_bit_adder:comb_11| ; 5 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part4|four_bit_adder:comb_11                   ; four_bit_adder ; work         ;
-;       |full_adder:comb_4|   ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part4|four_bit_adder:comb_11|full_adder:comb_4 ; full_adder     ; work         ;
-+-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+----------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                               ;
++--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+-----------------------+--------------+
+; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                      ; Entity Name           ; Library Name ;
++--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+-----------------------+--------------+
+; |Part4                               ; 25 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 33   ; 0            ; |Part4                                                   ; Part4                 ; work         ;
+;    |display_unit:comb_16|            ; 20 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part4|display_unit:comb_16                              ; display_unit          ; work         ;
+;       |comparator:comb_3|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part4|display_unit:comb_16|comparator:comb_3            ; comparator            ; work         ;
+;       |converter:comb_4|             ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part4|display_unit:comb_16|converter:comb_4             ; converter             ; work         ;
+;       |seven_segment_display:comb_6| ; 15 (15)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part4|display_unit:comb_16|seven_segment_display:comb_6 ; seven_segment_display ; work         ;
+;    |four_bit_adder:comb_11|          ; 5 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part4|four_bit_adder:comb_11                            ; four_bit_adder        ; work         ;
+;       |full_adder:comb_4|            ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part4|four_bit_adder:comb_11|full_adder:comb_4          ; full_adder            ; work         ;
++--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+-----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -241,18 +259,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 22                          ;
-; cycloneiii_lcell_comb ; 23                          ;
+; boundary_port         ; 33                          ;
+; cycloneiii_lcell_comb ; 30                          ;
 ;     arith             ; 4                           ;
 ;         3 data inputs ; 4                           ;
-;     normal            ; 19                          ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 2                           ;
+;     normal            ; 26                          ;
+;         0 data inputs ; 3                           ;
+;         1 data inputs ; 3                           ;
 ;         2 data inputs ; 1                           ;
-;         4 data inputs ; 14                          ;
+;         3 data inputs ; 7                           ;
+;         4 data inputs ; 12                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.40                        ;
-; Average LUT depth     ; 3.77                        ;
+; Average LUT depth     ; 3.55                        ;
 +-----------------------+-----------------------------+
 
 
@@ -271,59 +290,68 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Nov 05 19:13:32 2018
+    Info: Processing started: Sat Nov 17 16:10:36 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Part4 -c Part4
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20029): Only one processor detected - disabling parallel compilation
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Warning (10238): Verilog Module Declaration warning at Part4.v(179): ignored anonymous port(s) indicated by duplicate or dangling comma(s) in the port list for module "Part4" File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 179
 Info (12021): Found 9 design units, including 9 entities, in source file part4.v
-    Info (12023): Found entity 1: full_adder File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 8
-    Info (12023): Found entity 2: four_bit_adder File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 28
-    Info (12023): Found entity 3: half_display File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 52
-    Info (12023): Found entity 4: full_display File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 74
-    Info (12023): Found entity 5: two_one_four_bit_mux File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 92
-    Info (12023): Found entity 6: comparator File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 115
-    Info (12023): Found entity 7: converter File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 132
-    Info (12023): Found entity 8: display_unit File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 160
-    Info (12023): Found entity 9: Part4 File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 187
-Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(43): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 43
-Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(44): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 44
-Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(45): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 45
-Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(46): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 46
-Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(176): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 176
-Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(177): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 177
-Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(179): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 179
-Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(180): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 180
-Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(181): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 181
-Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(208): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 208
-Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(210): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 210
+    Info (12023): Found entity 1: full_adder File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 8
+    Info (12023): Found entity 2: four_bit_adder File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 28
+    Info (12023): Found entity 3: half_display File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 53
+    Info (12023): Found entity 4: seven_segment_display File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 75
+    Info (12023): Found entity 5: two_one_four_bit_mux File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 94
+    Info (12023): Found entity 6: comparator File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 111
+    Info (12023): Found entity 7: converter File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 128
+    Info (12023): Found entity 8: display_unit File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 152
+    Info (12023): Found entity 9: Part4 File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 174
+Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(43): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 43
+Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(44): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 44
+Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(45): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 45
+Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(46): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 46
+Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(163): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 163
+Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(164): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 164
+Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(166): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 166
+Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(167): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 167
+Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(168): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 168
+Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(197): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 197
+Critical Warning (10846): Verilog HDL Instantiation warning at Part4.v(205): instance has no name File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 205
 Info (12127): Elaborating entity "Part4" for the top level hierarchy
-Info (12128): Elaborating entity "four_bit_adder" for hierarchy "four_bit_adder:comb_11" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 208
-Warning (10034): Output port "carry" at Part4.v(39) has no driver File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 39
-Info (12128): Elaborating entity "full_adder" for hierarchy "four_bit_adder:comb_11|full_adder:comb_3" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 43
-Info (12128): Elaborating entity "display_unit" for hierarchy "display_unit:comb_12" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 210
-Info (12128): Elaborating entity "comparator" for hierarchy "display_unit:comb_12|comparator:comb_3" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 176
-Info (12128): Elaborating entity "converter" for hierarchy "display_unit:comb_12|converter:comb_4" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 177
-Info (12128): Elaborating entity "two_one_four_bit_mux" for hierarchy "display_unit:comb_12|two_one_four_bit_mux:comb_5" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 179
-Info (12128): Elaborating entity "full_display" for hierarchy "display_unit:comb_12|full_display:comb_6" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 180
-Info (12128): Elaborating entity "half_display" for hierarchy "display_unit:comb_12|half_display:comb_7" File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 181
+Warning (10034): Output port "LEDR[10..4]" at Part4.v(184) has no driver File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 184
+Info (12128): Elaborating entity "four_bit_adder" for hierarchy "four_bit_adder:comb_11" File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 197
+Warning (10034): Output port "carry" at Part4.v(39) has no driver File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 39
+Info (12128): Elaborating entity "full_adder" for hierarchy "four_bit_adder:comb_11|full_adder:comb_3" File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 43
+Info (12128): Elaborating entity "display_unit" for hierarchy "display_unit:comb_16" File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 205
+Info (12128): Elaborating entity "comparator" for hierarchy "display_unit:comb_16|comparator:comb_3" File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 163
+Info (12128): Elaborating entity "converter" for hierarchy "display_unit:comb_16|converter:comb_4" File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 164
+Info (12128): Elaborating entity "two_one_four_bit_mux" for hierarchy "display_unit:comb_16|two_one_four_bit_mux:comb_5" File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 166
+Info (12128): Elaborating entity "seven_segment_display" for hierarchy "display_unit:comb_16|seven_segment_display:comb_6" File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 167
+Info (12128): Elaborating entity "half_display" for hierarchy "display_unit:comb_16|half_display:comb_7" File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 168
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 196
-    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 196
-    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 196
-    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 196
-    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/Part4.v Line: 196
+    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 183
+    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 183
+    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 183
+    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 183
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 183
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 184
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 184
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 184
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 184
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 184
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 184
+    Warning (13410): Pin "LEDR[10]" is stuck at GND File: C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/Part4.v Line: 184
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 42 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 58 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 14 output pins
-    Info (21061): Implemented 20 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info (21059): Implemented 25 output pins
+    Info (21061): Implemented 25 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
     Info: Peak virtual memory: 4763 megabytes
-    Info: Processing ended: Mon Nov 05 19:14:03 2018
-    Info: Elapsed time: 00:00:31
-    Info: Total CPU time (on all processors): 00:00:29
+    Info: Processing ended: Sat Nov 17 16:10:54 2018
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:28
 
 

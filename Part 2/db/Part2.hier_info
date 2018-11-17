@@ -3,20 +3,20 @@ SW[0] => SW[0].IN3
 SW[1] => SW[1].IN3
 SW[2] => SW[2].IN3
 SW[3] => SW[3].IN3
-HEX2[0] <= seven_segment_display:comb_6.port1
-HEX2[1] <= seven_segment_display:comb_6.port1
-HEX2[2] <= seven_segment_display:comb_6.port1
-HEX2[3] <= seven_segment_display:comb_6.port1
-HEX2[4] <= seven_segment_display:comb_6.port1
-HEX2[5] <= seven_segment_display:comb_6.port1
-HEX2[6] <= seven_segment_display:comb_6.port1
-HEX3[0] <= half_display:comb_7.port1
-HEX3[1] <= half_display:comb_7.port1
-HEX3[2] <= half_display:comb_7.port1
-HEX3[3] <= half_display:comb_7.port1
-HEX3[4] <= half_display:comb_7.port1
-HEX3[5] <= half_display:comb_7.port1
-HEX3[6] <= half_display:comb_7.port1
+HEX2[0] << seven_segment_display:comb_6.port1
+HEX2[1] << seven_segment_display:comb_6.port1
+HEX2[2] << seven_segment_display:comb_6.port1
+HEX2[3] << seven_segment_display:comb_6.port1
+HEX2[4] << seven_segment_display:comb_6.port1
+HEX2[5] << seven_segment_display:comb_6.port1
+HEX2[6] << seven_segment_display:comb_6.port1
+HEX3[0] << half_display:comb_7.port1
+HEX3[1] << half_display:comb_7.port1
+HEX3[2] << half_display:comb_7.port1
+HEX3[3] << half_display:comb_7.port1
+HEX3[4] << half_display:comb_7.port1
+HEX3[5] << half_display:comb_7.port1
+HEX3[6] << half_display:comb_7.port1
 
 
 |Part2|comparator:comb_3

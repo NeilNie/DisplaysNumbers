@@ -70,9 +70,10 @@ assign out[0] = 1;
 
 endmodule
 
-// a full full seven segment display module.
+// full seven segment display module.
 
-module full_display(
+module seven_segment_display(
+
 	in,			// accepts a four bit input
 	out			// returns a six bit output
 );
@@ -117,26 +118,22 @@ module comparator(
 input [4:0] in;
 output out;
 
-assign out = in[4] | in[3] & (in[2] | in[1]);
+assign out = in[4] | (in[3] & (in[2] | in[1]));
 
 endmodule
 
 // this converter module convert number > 9 
 // to the appropriate number
 
-module converter(
-
-	in,
-	out
-);
+module converter(in, out);
 
 input [3:0] in;
 output [3:0] out;
 
-assign out[3] = (in[3] & ~in[2] & ~in[1]);
-assign out[2] = (in[2] & in[1]) | (~in[3] & ~in[2] & ~in[1] & ~in[0]);
-assign out[1] = (in[3] & in[2] & ~in[1]) | (~in[3] & in[2] & in[1]) | (~in[3] & ~in[2] & ~in[1] & ~in[0]);
-assign out[0] = (in[3] & in[0]) | (in[2] & in[1] & in[0]);
+assign out[3] = (~in[3] & ~in[2] & in[1]);
+assign out[2] = (~in[3] & ~in[2] & ~in[1]) | (in[3] & in[2] & in[1]);
+assign out[1] = (~in[3] & ~in[2] & ~in[1]) | (in[3] & in[2] & ~in[1]);
+assign out[0] = (~in[3] & ~in[2] & in[0]) | (in[3] & in[2] & in[0]) | (in[0] & in[2] & in[3]);
 
 endmodule
 
@@ -152,27 +149,22 @@ endmodule
 			display 1 when in > 9
 
 */
-module display_unit(
-
-	in,
-	hex0,
-	hex1
-);
+module display_unit(in, hex0, hex1, convert_out);
 
 input  [4:0] in;
 output [6:0] hex0;
 output [6:0] hex1;
 
 // declare internal variables
-wire 			compare_out;
-wire [3:0]  convert_out;
-wire [3:0]  mux_out;
+wire compare_out;
+output [3:0] convert_out;
+wire [3:0] mux_out;
 
 comparator(in, compare_out);
 converter(in[3:0], convert_out); // you only need the last four bits of the input
 
 two_one_four_bit_mux(in[3:0], convert_out, compare_out, mux_out);
-full_display(mux_out, hex0);
+seven_segment_display(mux_out, hex0);
 half_display(compare_out, hex1);
 
 endmodule
@@ -180,10 +172,9 @@ endmodule
 // ---------------------------------------------------------------
 
 module Part4(
-
 	SW,
 	HEX0,
-	HEX1
+	HEX1,
 );
 
 input [7:0] SW;
@@ -196,16 +187,14 @@ wire [7:4] y;
 wire [4:0] sum;
 wire [6:0] display0;
 wire [6:0] display1;
+wire [3:0] mux_out;
 
 assign x = SW[3:0];
 assign y = SW[7:4];
 
 four_bit_adder(x, y, sum);
 
-display_unit(sum, display0, display1);
-
-assign HEX0 = display0;
-assign HEX1 = display1;
+display_unit(sum, HEX0, HEX1, mux_out);
 
 endmodule
 

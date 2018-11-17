@@ -7,20 +7,31 @@ SW[4] => y[4].IN1
 SW[5] => y[5].IN1
 SW[6] => y[6].IN1
 SW[7] => y[7].IN1
-HEX0[0] <= display_unit:comb_12.port1
-HEX0[1] <= display_unit:comb_12.port1
-HEX0[2] <= display_unit:comb_12.port1
-HEX0[3] <= display_unit:comb_12.port1
-HEX0[4] <= display_unit:comb_12.port1
-HEX0[5] <= display_unit:comb_12.port1
-HEX0[6] <= display_unit:comb_12.port1
-HEX1[0] <= display_unit:comb_12.port2
-HEX1[1] <= display_unit:comb_12.port2
-HEX1[2] <= display_unit:comb_12.port2
-HEX1[3] <= display_unit:comb_12.port2
-HEX1[4] <= display_unit:comb_12.port2
-HEX1[5] <= display_unit:comb_12.port2
-HEX1[6] <= display_unit:comb_12.port2
+HEX0[0] <= display_unit:comb_16.port1
+HEX0[1] <= display_unit:comb_16.port1
+HEX0[2] <= display_unit:comb_16.port1
+HEX0[3] <= display_unit:comb_16.port1
+HEX0[4] <= display_unit:comb_16.port1
+HEX0[5] <= display_unit:comb_16.port1
+HEX0[6] <= display_unit:comb_16.port1
+HEX1[0] <= display_unit:comb_16.port2
+HEX1[1] <= display_unit:comb_16.port2
+HEX1[2] <= display_unit:comb_16.port2
+HEX1[3] <= display_unit:comb_16.port2
+HEX1[4] <= display_unit:comb_16.port2
+HEX1[5] <= display_unit:comb_16.port2
+HEX1[6] <= display_unit:comb_16.port2
+LEDR[0] <= display_unit:comb_16.port3
+LEDR[1] <= display_unit:comb_16.port3
+LEDR[2] <= display_unit:comb_16.port3
+LEDR[3] <= display_unit:comb_16.port3
+LEDR[4] <= <GND>
+LEDR[5] <= <GND>
+LEDR[6] <= <GND>
+LEDR[7] <= <GND>
+LEDR[8] <= <GND>
+LEDR[9] <= <GND>
+LEDR[10] <= <GND>
 
 
 |Part4|four_bit_adder:comb_11
@@ -136,19 +147,19 @@ cin => out.IN1
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Part4|display_unit:comb_12
+|Part4|display_unit:comb_16
 in[0] => in[0].IN3
 in[1] => in[1].IN3
 in[2] => in[2].IN3
 in[3] => in[3].IN3
 in[4] => in[4].IN1
-hex0[0] <= full_display:comb_6.port1
-hex0[1] <= full_display:comb_6.port1
-hex0[2] <= full_display:comb_6.port1
-hex0[3] <= full_display:comb_6.port1
-hex0[4] <= full_display:comb_6.port1
-hex0[5] <= full_display:comb_6.port1
-hex0[6] <= full_display:comb_6.port1
+hex0[0] <= seven_segment_display:comb_6.port1
+hex0[1] <= seven_segment_display:comb_6.port1
+hex0[2] <= seven_segment_display:comb_6.port1
+hex0[3] <= seven_segment_display:comb_6.port1
+hex0[4] <= seven_segment_display:comb_6.port1
+hex0[5] <= seven_segment_display:comb_6.port1
+hex0[6] <= seven_segment_display:comb_6.port1
 hex1[0] <= half_display:comb_7.port1
 hex1[1] <= half_display:comb_7.port1
 hex1[2] <= half_display:comb_7.port1
@@ -156,9 +167,13 @@ hex1[3] <= half_display:comb_7.port1
 hex1[4] <= half_display:comb_7.port1
 hex1[5] <= half_display:comb_7.port1
 hex1[6] <= half_display:comb_7.port1
+convert_out[0] <= convert_out[0].DB_MAX_OUTPUT_PORT_TYPE
+convert_out[1] <= convert_out[1].DB_MAX_OUTPUT_PORT_TYPE
+convert_out[2] <= convert_out[2].DB_MAX_OUTPUT_PORT_TYPE
+convert_out[3] <= convert_out[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Part4|display_unit:comb_12|comparator:comb_3
+|Part4|display_unit:comb_16|comparator:comb_3
 in[0] => ~NO_FANOUT~
 in[1] => out.IN0
 in[2] => out.IN1
@@ -167,22 +182,17 @@ in[4] => out.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Part4|display_unit:comb_12|converter:comb_4
+|Part4|display_unit:comb_16|converter:comb_4
+in[0] => out.IN1
+in[0] => out.IN1
 in[0] => out.IN0
-in[0] => out.IN1
-in[0] => out.IN1
-in[1] => out.IN0
 in[1] => out.IN1
 in[1] => out.IN1
 in[1] => out.IN1
 in[1] => out.IN1
+in[2] => out.IN0
 in[2] => out.IN1
 in[2] => out.IN0
-in[2] => out.IN0
-in[2] => out.IN0
-in[2] => out.IN0
-in[3] => out.IN1
-in[3] => out.IN1
 in[3] => out.IN1
 in[3] => out.IN1
 in[3] => out.IN1
@@ -192,7 +202,7 @@ out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
 out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Part4|display_unit:comb_12|two_one_four_bit_mux:comb_5
+|Part4|display_unit:comb_16|two_one_four_bit_mux:comb_5
 a[0] => out.IN0
 a[1] => out.IN0
 a[2] => out.IN0
@@ -215,7 +225,7 @@ out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
 out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Part4|display_unit:comb_12|full_display:comb_6
+|Part4|display_unit:comb_16|seven_segment_display:comb_6
 in[0] => out.IN1
 in[0] => out.IN1
 in[0] => out.IN1
@@ -266,7 +276,7 @@ out[5] <= Add3.DB_MAX_OUTPUT_PORT_TYPE
 out[6] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Part4|display_unit:comb_12|half_display:comb_7
+|Part4|display_unit:comb_16|half_display:comb_7
 in => out[2].DATAIN
 in => out[1].DATAIN
 out[0] <= <VCC>

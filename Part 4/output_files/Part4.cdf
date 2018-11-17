@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("C:/Users/USER1/Digital Logic/DisplaysNumbers/Part 4/output_files/") File("Part4.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("C:/Users/USER1/Digital Logic/DisplaysNumbers_Lab2/Part 4/output_files/") File("Part4.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
